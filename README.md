@@ -33,7 +33,7 @@ npm i inly --save
 
 ### inly(from, to)
 
-- `from` - path to **.zip** archive
+- `from` - path to archive
 - `to` - path to directory where files would be stored.
 
 ```js
