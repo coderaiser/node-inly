@@ -1,6 +1,6 @@
 {
   "name": "inly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "extract .zip, .gz, .tar, .tar.gz, .tgz",
   "main": "lib/inly.js",
   "bin": {
