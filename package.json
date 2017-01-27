@@ -34,7 +34,6 @@
     "watch:coverage": "npm run watcher -- npm run coverage"
   },
   "dependencies": {
-    "async": "^2.0.1",
     "glob": "^7.0.0",
     "jaguar": "^3.1.0",
     "onezip": "^1.0.5",
