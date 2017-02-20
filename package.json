@@ -37,6 +37,7 @@
     "glob": "^7.0.0",
     "jaguar": "^3.1.0",
     "onezip": "^1.0.5",
+    "pipe-io": "^2.0.2",
     "yargs-parser": "^5.0.0"
   },
   "devDependencies": {
