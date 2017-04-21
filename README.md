@@ -82,6 +82,7 @@ var inly = require('inly/legacy');
 ## Related
 
 - [OneZip](https://github.com/coderaiser/node-onezip "OneZip") - Pack and extract .zip archives with emitter.
+- [Bizzy](https://github.com/coderaiser/node-bizzy "Bizzy") - Pack and extract .tar.bz2 archives with emitter.
 - [Jaguar](https://github.com/coderaiser/node-jaguar "Jaguar") - Pack and extract .tar.gz archives with emitter.
 - [Jag](https://github.com/coderaiser/node-jag "Jag") - Pack files and folders with tar and gzip.
 - [Tar-to-zip](https://github.com/coderaiser/node-tar-to-zip "Tar-to-zip") - Convert tar and tar.gz archives to zip.
