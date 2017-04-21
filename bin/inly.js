@@ -20,13 +20,11 @@ if (args.version)
 else if (args.help)
     help();
 else if (args._.length)
-   getName(args._.pop(), (name) => {
-        main('extract', name);
-    });
+   getName(args._.pop(), extract);
 else
     help();
 
-function main(operation, file) {
+function extract(file) {
     const cwd = process.cwd();
     const packer = inly(file, cwd);
     
@@ -34,11 +32,11 @@ function main(operation, file) {
         console.error(error.message);
     });
     
-    packer.on('progress', function(percent) {
+    packer.on('progress', (percent) => {
         process.stdout.write('\r' + percent + '%');
     });
     
-    packer.on('end', function() {
+    packer.on('end', () => {
         process.stdout.write('\n');
     });
 }
@@ -46,11 +44,12 @@ function main(operation, file) {
 function getName(str, fn) {
     glob(str, (error, files) => {
         if (error)
-            console.error(error.message);
-        else if (!files.length)
-            console.error('file not found');
-        else
-            fn(files[0]);
+            return console.error(error.message);
+        
+        if (!files.length)
+            return console.error('file not found');
+        
+        fn(files[0]);
     });
 }
 
