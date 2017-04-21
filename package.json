@@ -34,6 +34,7 @@
     "watch:coverage": "npm run watcher -- npm run coverage"
   },
   "dependencies": {
+    "bizzy": "^1.0.0",
     "glob": "^7.0.0",
     "jaguar": "^3.1.0",
     "onezip": "^1.0.5",
@@ -69,6 +70,7 @@
     "bz2",
     "tgz",
     "tar.gz",
+    "tar.bz2",
     "unzip"
   ],
   "author": "coderaiser <mnemonic.enemy@gmail.com> (http://coderaiser.github.io/)",

@@ -41,9 +41,31 @@ test('tar: extract: error: tar', (t) => {
     });
 });
 
-test('tar: extract', (t) => {
+test('tar: extract: gz', (t) => {
     const to = mkdtempSync(tmpdir() + sep);
     const from = join(fixture, 'fixture.tar.gz');
+    const extracter = extract(from, to);
+    
+    extracter.on('error', (e) => console.log(e));
+    
+    extracter.on('end', () => {
+        const pathUnpacked = join(to, 'fixture.txt');
+        const pathFixture= join(fixture, 'fixture.txt');
+        
+        const fileUnpacked = readFileSync(pathUnpacked);
+        const fileFixture = readFileSync(pathFixture);
+        
+        unlinkSync(pathUnpacked);
+        rmdirSync(to);
+        
+        t.deepEqual(fileFixture, fileUnpacked, 'should extract file');
+        t.end();
+    });
+});
+
+test('tar: extract: bz2', (t) => {
+    const to = mkdtempSync(tmpdir() + sep);
+    const from = join(fixture, 'fixture.tar.bz2');
     const extracter = extract(from, to);
     
     extracter.on('error', (e) => console.log(e));
