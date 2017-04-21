@@ -1,6 +1,6 @@
 # Inly [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Dependency Status][DependencyStatusIMGURL]][DependencyStatusURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
-Extract .zip, .gz, .tar, tar.gz, .tgz archives with emitter.
+Extract .zip, .gz, .bz2, .tar, tar.gz, .tgz archives with emitter.
 
 ## Global
 

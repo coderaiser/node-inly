@@ -1,7 +1,7 @@
 {
   "name": "inly",
   "version": "1.0.5",
-  "description": "extract .zip, .gz, .tar, .tar.gz, .tgz",
+  "description": "extract .zip, .gz, .bz2, .tar, .tar.gz, .tgz",
   "main": "lib/inly.js",
   "bin": {
     "inly": "bin/inly.js",
@@ -39,6 +39,7 @@
     "onezip": "^1.0.5",
     "pipe-io": "^2.0.2",
     "through2": "^2.0.3",
+    "unbzip2-stream": "^1.0.11",
     "yargs-parser": "^5.0.0"
   },
   "devDependencies": {
@@ -62,8 +63,10 @@
     "extract",
     "zip",
     "gzip",
+    "bzip2",
     "tar",
     "gz",
+    "bz2",
     "tgz",
     "tar.gz",
     "unzip"
