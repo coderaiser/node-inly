@@ -1,3 +1,10 @@
+2017.04.24, v1.2.1
+
+fix:
+- (inly) tbz -> tbz2
+- test(fixture) .tar.bz2
+
+
 2017.04.21, v1.2.0
 
 feature:
