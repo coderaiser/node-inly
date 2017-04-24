@@ -1,7 +1,7 @@
 {
   "name": "inly",
   "version": "1.2.0",
-  "description": "extract .zip, .gz, .bz2, .tar, .tar.gz, .tgz",
+  "description": "extract .zip, .gz, .bz2, .tar, .tar.gz, .tgz, .tbz2",
   "main": "lib/inly.js",
   "bin": {
     "inly": "bin/inly.js",
@@ -71,6 +71,7 @@
     "tgz",
     "tar.gz",
     "tar.bz2",
+    "tbz2",
     "unzip"
   ],
   "author": "coderaiser <mnemonic.enemy@gmail.com> (http://coderaiser.github.io/)",
