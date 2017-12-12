@@ -9,7 +9,7 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "env"
     ]
   },
   "scripts": {
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
-    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
     "eslint": "^4.0.0",
     "jscs": "^3.0.7",
