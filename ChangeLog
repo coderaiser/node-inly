@@ -1,3 +1,10 @@
+2018.03.05, v1.2.4
+
+feature:
+- (package) yargs-parser v9.0.2
+- (package) preset: es2015 -> env
+
+
 2017.10.05, v1.2.3
 
 feature:
