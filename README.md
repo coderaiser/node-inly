@@ -72,13 +72,6 @@ In case of starting example output should be similar to (but with additional eve
 done
 ```
 
-## Environments
-
-In old `node.js` environments that not fully supports `es2015`, `inly` could be used with:
-
-```js
-var inly = require('inly/legacy');
-```
 ## Related
 
 - [OneZip](https://github.com/coderaiser/node-onezip "OneZip") - Pack and extract .zip archives with emitter.
