@@ -1,3 +1,12 @@
+2018.05.02, v2.0.0
+
+feature:
+- (package) add eslint-plugin-node
+- (package) pipe-io v3.0.0
+- (inly) drop support of node < 4
+- (package) rm jshin, jscs
+
+
 2018.04.20, v1.2.5
 
 feature:
