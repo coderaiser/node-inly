@@ -20,7 +20,7 @@
   "dependencies": {
     "bizzy": "^2.0.1",
     "glob": "^7.0.0",
-    "jaguar": "^4.0.0",
+    "jaguar": "^5.0.0",
     "onezip": "^2.0.0",
     "pipe-io": "^3.0.0",
     "through2": "^2.0.3",
