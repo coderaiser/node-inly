@@ -18,7 +18,7 @@
     "watch:coverage": "npm run watcher -- npm run coverage"
   },
   "dependencies": {
-    "bizzy": "^2.0.1",
+    "bizzy": "^3.0.0",
     "glob": "^7.0.0",
     "jaguar": "^5.0.0",
     "onezip": "^3.0.0",
