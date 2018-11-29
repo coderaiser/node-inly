@@ -25,7 +25,7 @@
     "pipe-io": "^3.0.0",
     "through2": "^2.0.3",
     "unbzip2-stream": "^1.0.11",
-    "yargs-parser": "^10.0.0"
+    "yargs-parser": "^11.1.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
