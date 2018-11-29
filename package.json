@@ -63,5 +63,8 @@
   "bugs": {
     "url": "https://github.com/coderaiser/node-inly/issues"
   },
-  "homepage": "https://github.com/coderaiser/node-inly"
+  "homepage": "https://github.com/coderaiser/node-inly",
+  "publishConfig": {
+    "access": "public"
+  }
 }
