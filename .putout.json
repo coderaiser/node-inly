@@ -1,0 +1,7 @@
+{
+    "match": {
+        "test": {
+            "remove-console": "off"
+        }
+    }
+}

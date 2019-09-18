@@ -1,19 +1,18 @@
 'use strict';
 
-const {EventEmitter} = require('events');
 const {tmpdir} = require('os');
 const {
     sep,
-    join
+    join,
 } = require('path');
 const {
     readFileSync,
     unlinkSync,
     rmdirSync,
-    mkdtempSync
+    mkdtempSync,
 } = require('fs');
 
-const test = require('tape');
+const test = require('supertape');
 const extract = require('..');
 const fixture = join(__dirname, 'fixture');
 
@@ -22,7 +21,7 @@ test('tar: extract: error: file not found', (t) => {
     const extracter = extract('hello.tar.gz', 'hello');
     
     extracter.on('error', (e) => {
-        t.equal(e.message,  expect, 'should emit error when file not found');
+        t.equal(e.message, expect, 'should emit error when file not found');
         t.end();
     });
 });
@@ -33,7 +32,7 @@ test('tar: extract: error: tar', (t) => {
     const extracter = extract(from, 'hello');
     
     extracter.on('error', (e) => {
-        t.equal(e.message,  expect, 'should emit error when file not found');
+        t.equal(e.message, expect, 'should emit error when file not found');
         t.end();
     });
     extracter.on('end', () => {
@@ -50,7 +49,7 @@ test('tar: extract: gz', (t) => {
     
     extracter.on('end', () => {
         const pathUnpacked = join(to, 'fixture.txt');
-        const pathFixture= join(fixture, 'fixture.txt');
+        const pathFixture = join(fixture, 'fixture.txt');
         
         const fileUnpacked = readFileSync(pathUnpacked);
         const fileFixture = readFileSync(pathFixture);
@@ -72,7 +71,7 @@ test('tar: extract: bz2', (t) => {
     
     extracter.on('end', () => {
         const pathUnpacked = join(to, 'fixture.txt');
-        const pathFixture= join(fixture, 'fixture.txt');
+        const pathFixture = join(fixture, 'fixture.txt');
         
         const fileUnpacked = readFileSync(pathUnpacked);
         const fileFixture = readFileSync(pathFixture);
@@ -93,7 +92,7 @@ test('tar: extract: tar', (t) => {
     
     extracter.on('end', () => {
         const pathUnpacked = join(to, 'fixture.txt');
-        const pathFixture= join(fixture, 'fixture.txt');
+        const pathFixture = join(fixture, 'fixture.txt');
         
         const fileUnpacked = readFileSync(pathUnpacked);
         const fileFixture = readFileSync(pathFixture);

@@ -7,15 +7,14 @@
     "inly": "bin/inly.js"
   },
   "scripts": {
-    "lint:eslint": "eslint lib",
-    "lint:eslint:bin": "eslint bin --config .eslint-bin.rc",
-    "lint": "redrun lint:*",
-    "test": "tape 'test/**/*.js'",
-    "coverage": "nyc npm test",
-    "report": "nyc report --reporter=text-lcov | coveralls",
-    "watcher": "nodemon -w test -w lib --exec",
-    "watch:test": "npm run watcher -- npm test",
-    "watch:coverage": "npm run watcher -- npm run coverage"
+    "lint": "madrun lint",
+    "fix:lint": "madrun fix:lint",
+    "test": "madrun test",
+    "coverage": "madrun coverage",
+    "report": "madrun report",
+    "watcher": "madrun watcher",
+    "watch:test": "madrun watch:test",
+    "watch:coverage": "madrun watch:coverage"
   },
   "dependencies": {
     "bizzy": "^3.0.0",
@@ -24,6 +23,7 @@
     "onezip": "^3.0.0",
     "pipe-io": "^4.0.0",
     "through2": "^3.0.0",
+    "try-to-catch": "^1.1.1",
     "unbzip2-stream": "^1.0.11",
     "yargs-parser": "^14.0.0"
   },

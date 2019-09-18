@@ -1,0 +1,16 @@
+{
+    "overrides": [{
+        "files": ["bin/**"],
+        "rules": {
+            "no-process-exit": "off"
+        }
+    }],
+    "extends": [
+        "plugin:putout/recommended",
+        "plugin:node/recommended"
+    ],
+    "plugins": [
+        "putout",
+        "node"
+    ]
+}

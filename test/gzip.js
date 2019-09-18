@@ -1,22 +1,20 @@
 'use strict';
 
-const {EventEmitter} = require('events');
 const {tmpdir} = require('os');
 const {
     sep,
-    join
+    join,
 } = require('path');
 const {
     readFileSync,
     unlinkSync,
     rmdirSync,
-    mkdtempSync
+    mkdtempSync,
 } = require('fs');
 
-const test = require('tape');
+const test = require('supertape');
 const inly = require('..');
 
-const tmp = () => mkdtempSync(tmpdir() + sep);
 const fixture = join(__dirname, 'fixture');
 
 test('inly: extract: gzip', (t) => {
@@ -26,7 +24,7 @@ test('inly: extract: gzip', (t) => {
     
     extracter.on('end', () => {
         const pathUnpacked = join(to, 'fixture.txt');
-        const pathFixture= join(fixture, 'fixture.txt');
+        const pathFixture = join(fixture, 'fixture.txt');
         
         const fileUnpacked = readFileSync(pathUnpacked);
         const fileFixture = readFileSync(pathFixture);

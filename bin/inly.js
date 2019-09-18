@@ -4,13 +4,13 @@
 
 const inly = require('..');
 const glob = require('glob');
-const argv = process.argv;
+const {argv} = process;
 
 const args = require('yargs-parser')(argv.slice(2), {
     alias: {
         v: 'version',
         h: 'help',
-    }
+    },
 });
 
 validate(args);
@@ -20,7 +20,7 @@ if (args.version)
 else if (args.help)
     help();
 else if (args._.length)
-   getName(args._.pop(), extract);
+    getName(args._.pop(), extract);
 else
     help();
 
@@ -68,20 +68,20 @@ function help() {
     console.log(usage);
     console.log('Options:');
     
-    Object.keys(bin).forEach((name) => {
+    for (const name of Object.keys(bin)) {
         console.log(`  ${name} ${bin[name]}`);
-    });
+    }
 }
 
 function validate(args) {
     const cmdReg = /^(_|v(ersion)?|h(elp)?)$/;
     
-    Object.keys(args).forEach((cmd) => {
+    for (const cmd of Object.keys(args)) {
         if (!cmdReg.test(cmd)) {
-            const name = info().name;
+            const {name} = info();
             console.error(`'${cmd}' is not a ${name} option. See '${name} --help'.`);
             process.exit(-1);
         }
-    });
+    }
 }
 
