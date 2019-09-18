@@ -22,7 +22,7 @@
     "glob": "^7.0.0",
     "jaguar": "^5.0.0",
     "onezip": "^3.0.0",
-    "pipe-io": "^3.0.0",
+    "pipe-io": "^4.0.0",
     "through2": "^3.0.0",
     "unbzip2-stream": "^1.0.11",
     "yargs-parser": "^14.0.0"
