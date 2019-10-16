@@ -1,3 +1,10 @@
+2019.10.16, v4.0.0
+
+feature:
+- (inly) drop support of node < 10
+- (package) yargs-parser v15.0.0
+
+
 2019.09.18, v3.0.4
 
 feature:
