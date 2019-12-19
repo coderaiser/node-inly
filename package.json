@@ -19,7 +19,7 @@
   "dependencies": {
     "bizzy": "^3.0.0",
     "glob": "^7.0.0",
-    "jaguar": "^5.0.0",
+    "jaguar": "^6.0.0",
     "onezip": "^4.0.0",
     "pipe-io": "^4.0.0",
     "through2": "^3.0.0",
@@ -36,7 +36,6 @@
     "nodemon": "^2.0.2",
     "nyc": "^14.1.1",
     "putout": "^6.0.0",
-    "redrun": "^7.0.0",
     "rimraf": "^3.0.0",
     "supertape": "^1.2.3",
     "tape": "^4.6.2"
