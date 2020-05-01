@@ -1,5 +1,6 @@
 'use strict';
 
+const {once} = require('events');
 const {tmpdir} = require('os');
 const {sep} = require('path');
 const {mkdtempSync} = require('fs');
@@ -20,23 +21,24 @@ test('inly: extract: to', (t) => {
     t.end();
 });
 
-test('inly: extract: error: file not found', (t) => {
+test('inly: extract: error: file not found', async (t) => {
     const expect = 'ENOENT: no such file or directory, open \'hello.zip\'';
     const extracter = inly('hello.zip', 'hello');
+    const [e] = await once(extracter, 'error');
     
-    extracter.on('error', (e) => {
-        t.equal(e.message, expect, 'should emit error when file not found');
-        t.end();
-    });
+    t.equal(e.message, expect, 'should emit error when file not found');
+    t.end();
 });
 
-test('inly: extract: error: wrong file type', (t) => {
+test('inly: extract: error: wrong file type', async (t) => {
     const expect = 'Not supported archive type: ".js"';
     const extracter = inly(__filename, tmp());
     
-    extracter.on('error', ({message}) => {
-        t.equal(message, expect, 'should emit error when can not extract');
-        t.end();
-    });
+    const [{
+        message,
+    }] = await once(extracter, 'error');
+    
+    t.equal(message, expect, 'should emit error when can not extract');
+    t.end();
 });
 
