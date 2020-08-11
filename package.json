@@ -6,6 +6,12 @@
   "bin": {
     "inly": "bin/inly.js"
   },
+  "nyc": {
+    "exclude": [
+      "test",
+      ".*.js"
+    ]
+  },
   "scripts": {
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
