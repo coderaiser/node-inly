@@ -1,3 +1,19 @@
+2024.02.01, v5.0.0
+
+feature:
+- bb1bdb3 inly: try-catch v3.0.1
+- 43abe97 inly: nodemon v3.0.3
+- a40e0f7 inly: eslint v8.56.0
+- d405759 inly: onezip v6.0.2
+- 6962ba5 drop support of node < 18
+- 694f24f inly: eslint-plugin-n v16.6.2
+- 194d268 inly: madrun v10.0.1
+- 3d028d8 inly: eslint-plugin-putout v22.3.1
+- 6ea7ce9 inly: supertape v10.0.0
+- a1c2c34 inly: putout v35.0.1
+- 31fcc93 inly: yargs-parser v21.1.1
+- dd0b97d inly: glob v10.3.10
+
 2020.09.11, v4.0.8
 
 feature:
