@@ -2,10 +2,8 @@
 
 const {once} = require('events');
 const {tmpdir} = require('os');
-const {
-    sep,
-    join,
-} = require('path');
+const {sep, join} = require('path');
+
 const {
     readFileSync,
     unlinkSync,
@@ -18,7 +16,7 @@ const extract = require('..');
 const fixture = join(__dirname, 'fixture');
 
 test('tar: extract: error: file not found', async (t) => {
-    const expect = 'ENOENT: no such file or directory, open \'hello.tar.gz\'';
+    const expect = `ENOENT: no such file or directory, open 'hello.tar.gz'`;
     const extracter = extract('hello.tar.gz', 'hello');
     const [e] = await once(extracter, 'error');
     
@@ -93,4 +91,3 @@ test('tar: extract: tar', async (t) => {
     t.deepEqual(fileFixture, fileUnpacked, 'should extract file');
     t.end();
 });
-

@@ -1,4 +1,4 @@
-# Inly [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Dependency Status][DependencyStatusIMGURL]][DependencyStatusURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
+# Inly [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
 Extract .zip, .gz, .bz2, .tar, tar.gz, tar.bz2, .tgz, .tbz2 archives with emitter.
 
@@ -9,6 +9,7 @@ Extract .zip, .gz, .bz2, .tar, tar.gz, tar.bz2, .tgz, .tbz2 archives with emitte
 ```
 npm i inly -g
 ```
+
 And used this way:
 
 ```
@@ -41,7 +42,7 @@ const inly = require('inly');
 const path = require('path');
 const cwd = process.cwd();
 const name = 'pipe.zip';
-const to = cwd + '/pipe-io';
+const to = `${cwd}/pipe-io`;
 const from = path.join(cwd, name);
 
 const extract = inly(from, to);
@@ -51,7 +52,7 @@ extract.on('file', (name) => {
 });
 
 extract.on('progress', (percent) => {
-    console.log(percent + '%');
+    console.log(`${percent}%`);
 });
 
 extract.on('error', (error) => {
@@ -86,15 +87,11 @@ done
 
 MIT
 
-[NPMIMGURL]:                https://img.shields.io/npm/v/inly.svg?style=flat
-[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/node-inly/master.svg?style=flat
-[DependencyStatusIMGURL]:   https://img.shields.io/david/coderaiser/node-inly.svg?style=flat
-[LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
-[NPMURL]:                   https://npmjs.org/package/inly "npm"
-[BuildStatusURL]:           https://travis-ci.org/coderaiser/node-inly  "Build Status"
-[DependencyStatusURL]:      https://david-dm.org/coderaiser/node-inly "Dependency Status"
-[LicenseURL]:               https://tldrlegal.com/license/mit-license "MIT License"
-
-[CoverageURL]:              https://coveralls.io/github/coderaiser/node-inly?branch=master
-[CoverageIMGURL]:           https://coveralls.io/repos/coderaiser/node-inly/badge.svg?branch=master&service=github
-
+[NPMIMGURL]: https://img.shields.io/npm/v/inly.svg?style=flat
+[BuildStatusIMGURL]: https://img.shields.io/travis/coderaiser/node-inly/master.svg?style=flat
+[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[NPMURL]: https://npmjs.org/package/inly "npm"
+[BuildStatusURL]: https://travis-ci.org/coderaiser/node-inly "Build Status"
+[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
+[CoverageURL]: https://coveralls.io/github/coderaiser/node-inly?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-inly/badge.svg?branch=master&service=github

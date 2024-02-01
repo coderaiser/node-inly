@@ -2,10 +2,8 @@
 
 const {once} = require('events');
 const {tmpdir} = require('os');
-const {
-    sep,
-    join,
-} = require('path');
+const {sep, join} = require('path');
+
 const {
     readFileSync,
     unlinkSync,
@@ -43,7 +41,6 @@ test('inly: extract: zip: empty: error', async (t) => {
     const extracter = inly(from, 'hello');
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
-

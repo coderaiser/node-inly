@@ -2,6 +2,7 @@
 
 'use strict';
 
+const process = require('node:process');
 const inly = require('..');
 const glob = require('glob');
 const {argv} = process;
@@ -84,4 +85,3 @@ function validate(args) {
         }
     }
 }
-

@@ -9,11 +9,11 @@
         }
     }],
     "extends": [
-        "plugin:putout/recommended",
-        "plugin:node/recommended"
+        "plugin:n/recommended",
+        "plugin:putout/recommended"
     ],
     "plugins": [
         "putout",
-        "node"
+        "n"
     ]
 }

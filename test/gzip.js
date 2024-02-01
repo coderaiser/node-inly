@@ -2,10 +2,8 @@
 
 const {once} = require('events');
 const {tmpdir} = require('os');
-const {
-    sep,
-    join,
-} = require('path');
+const {sep, join} = require('path');
+
 const {
     readFileSync,
     unlinkSync,
@@ -43,35 +41,34 @@ test('inly: extract: gzip: error: empty', async (t) => {
     const extracter = inly(from, 'ss');
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
 
 test('inly: extract: gzip: error: not found', async (t) => {
-    const error = 'ENOENT: no such file or directory, stat \'not-found.gz\'';
+    const error = `ENOENT: no such file or directory, stat 'not-found.gz'`;
     const extracter = inly('not-found.gz', 'ss');
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
 
-test('inly: extract: gzip: error: not found', async (t) => {
-    const error = 'ENOENT: no such file or directory, stat \'not-found.gz\'';
+test('inly: extract: gzip: error: not found: gz', async (t) => {
+    const error = `ENOENT: no such file or directory, stat 'not-found.gz'`;
     const extracter = inly('not-found.gz', 'ss');
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
 
 test('inly: extract: gzip: error: EACCESS', async (t) => {
-    const error = 'ENOENT: no such file or directory, open \'not-found/fixture.txt\'';
+    const error = `ENOENT: no such file or directory, open 'not-found/fixture.txt'`;
     const from = join(fixture, 'fixture.txt.gz');
     const extracter = inly(from, 'not-found');
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
-

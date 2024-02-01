@@ -2,10 +2,8 @@
 
 const {once} = require('events');
 const {tmpdir} = require('os');
-const {
-    sep,
-    join,
-} = require('path');
+const {sep, join} = require('path');
+
 const {
     readFileSync,
     unlinkSync,
@@ -45,38 +43,27 @@ test('inly: extract: bz2: error: empty', async (t) => {
     
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
 
 test('inly: extract: bz2: error: not found', async (t) => {
-    const error = 'ENOENT: no such file or directory, stat \'not-found.bz2\'';
+    const error = `ENOENT: no such file or directory, stat 'not-found.bz2'`;
     const extracter = inly('not-found.bz2', 'ss');
     
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
-    t.end();
-});
-
-test('inly: extract: bz2: error: not found', async (t) => {
-    const error = 'ENOENT: no such file or directory, stat \'not-found.bz2\'';
-    const extracter = inly('not-found.bz2', 'ss');
-    
-    const [e] = await once(extracter, 'error');
-    
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
 
 test('inly: extract: bz2: error: EACCESS', async (t) => {
-    const error = 'ENOENT: no such file or directory, open \'not-found/fixture.txt\'';
+    const error = `ENOENT: no such file or directory, open 'not-found/fixture.txt'`;
     const from = join(fixture, 'fixture.txt.bz2');
     const extracter = inly(from, 'not-found');
     
     const [e] = await once(extracter, 'error');
     
-    t.deepEqual(e.message, error, 'should extract file');
+    t.equal(e.message, error, 'should extract file');
     t.end();
 });
-
