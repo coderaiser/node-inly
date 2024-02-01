@@ -1,16 +1,11 @@
 {
   "name": "inly",
   "version": "4.0.8",
+  "type": "commonjs",
   "description": "extract .zip, .gz, .bz2, .tar, .tar.gz, .tgz, .tbz2",
   "main": "lib/inly.js",
   "bin": {
     "inly": "bin/inly.js"
-  },
-  "nyc": {
-    "exclude": [
-      "test",
-      ".*.js"
-    ]
   },
   "scripts": {
     "lint": "madrun lint",
@@ -43,7 +38,8 @@
     "nodemon": "^3.0.3",
     "nyc": "^15.0.0",
     "putout": "^35.0.1",
-    "supertape": "^10.0.0"
+    "supertape": "^10.0.0",
+    "try-catch": "^3.0.1"
   },
   "engines": {
     "node": ">=18"
