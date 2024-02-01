@@ -1,0 +1,59 @@
+name: Node CI
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NAME: inly
+    strategy:
+      matrix:
+        node-version:
+          - 18.x
+          - 20.x
+          - 21.x
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Redrun
+        run: bun install redrun -g --no-save
+      - name: Install
+        run: yarn --no-lockfile
+      - name: Lint
+        run: redrun fix:lint
+      - name: Install Rust
+        run: rustup update
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      - name: Typos Install
+        run: which typos || cargo install typos-cli
+      - name: Typos
+        run: typos --write-changes
+      - name: Commit fixes
+        continue-on-error: true
+        uses: EndBug/add-and-commit@v9
+        with:
+          fetch: --force
+          message: "chore: ${{ env.NAME }}: actions: lint ☘️"
+          pull: --rebase --autostash
+      - name: Coverage
+        run: redrun coverage report
+      - name: Coveralls
+        continue-on-error: true
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

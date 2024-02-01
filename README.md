@@ -1,5 +1,14 @@
 # Inly [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
+[NPMURL]: https://npmjs.org/package/inly "npm"
+[NPMIMGURL]: https://img.shields.io/npm/v/inly.svg?style=flat
+[BuildStatusURL]: https://github.com/coderaiser/node-inly/actions/workflows/nodejs.yml "Build Status"
+[BuildStatusIMGURL]: https://github.com/coderaiser/node-inly/actions/workflows/nodejs.yml/badge.svg
+[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
+[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[CoverageURL]: https://coveralls.io/github/coderaiser/node-inly?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-inly/badge.svg?branch=master&service=github
+
 Extract .zip, .gz, .bz2, .tar, tar.gz, tar.bz2, .tgz, .tbz2 archives with emitter.
 
 ## Global
@@ -86,12 +95,3 @@ done
 ## License
 
 MIT
-
-[NPMIMGURL]: https://img.shields.io/npm/v/inly.svg?style=flat
-[BuildStatusIMGURL]: https://img.shields.io/travis/coderaiser/node-inly/master.svg?style=flat
-[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
-[NPMURL]: https://npmjs.org/package/inly "npm"
-[BuildStatusURL]: https://travis-ci.org/coderaiser/node-inly "Build Status"
-[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
-[CoverageURL]: https://coveralls.io/github/coderaiser/node-inly?branch=master
-[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-inly/badge.svg?branch=master&service=github
